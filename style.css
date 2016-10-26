@@ -1,0 +1,53 @@
+.CELULA{
+	border-radius: 4px;
+	border: solid green;
+	padding: 5px;
+	background-color: #F8F094;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #663300;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.center-block {
+	width:360px;
+	height:360px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-180px;
+	margin-left:-180px;
+}
+
+.O{	
+    background-image:url("img/o.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.X{	
+    background-image:url("img/x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.CELULA:hover {
+	border: dashed green;
+	color: #996633;
+	cursor: pointer;
+}
+
+button:{
+	border-radius:20px;
+}
+
+button:active {
+	border: thin solid #99CC00;
+	background-color: #F5FFD2;
+	color: #669900;
+	cursor: pointer;
+}
