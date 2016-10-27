@@ -5,17 +5,17 @@
 	display: inline-block;
 }
 
-#A1,#A2,#A3,#B1,#B2,#B3{
-	border-bottom: solid black;
-}
+/*#A1,#A2,#A3,#B1,#B2,#B3{*/
+/*	border-bottom: solid black;*/
+/*}*/
 
 #C1,#C2,#C3,#B1,#B2,#B3{
 	border-top: solid black;
 }
 
-#A2,#B2,#C2,#A3,#B3,#C3{
-	border-left: solid black;
-}
+/*#A2,#B2,#C2,#A3,#B3,#C3{*/
+/*	border-left: none red;*/
+/*}*/
 
 #A2,#B2,#C2,#A1,#B1,#C1{
 	border-right: solid black;
@@ -44,12 +44,6 @@
     background-position: center center;
     background-size: contain;
 }
-
-/*.CELULA:hover {*/
-/*	border: dashed green;*/
-/*	color: #996633;*/
-/*	cursor: pointer;*/
-/*}*/
 
 button:{
 	border-radius:20px;
