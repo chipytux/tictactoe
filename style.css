@@ -1,7 +1,7 @@
 .CELULA{
 	border-radius: 4px;
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	display: inline-block;
 }
 
@@ -22,13 +22,13 @@
 }
 
 .center-block {
-	width:360px;
-	height:360px;
+	width:500px;
+	height:500px;
 	position:absolute;
 	top:50%;
 	left:50%;
-	margin-top:-180px;
-	margin-left:-180px;
+	margin-top:-250px;
+	margin-left:-250px;
 }
 
 .O{	
