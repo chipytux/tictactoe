@@ -2,8 +2,12 @@
 
 var fim_partida=false;
 var vez = 0;
+var xwon = 0;
+var owon = 0;
 
 function iniciarPartida(){
+    $("#XWON").html(xwon);
+    $("#OWON").html(owon);
     $(".CELULA").attr('valor',0);
     $(".CELULA").removeClass('X');
     $(".CELULA").removeClass('O');
@@ -27,8 +31,8 @@ $(document).ready(function(){
             }
             else{
                 $(this).addClass('O');
-                vez++;
                 $(this).attr('valor',2);
+                vez++;
             }
         }
         verificarVitoria();
@@ -37,8 +41,8 @@ $(document).ready(function(){
     $("#LIMPAR").click(function(){
         iniciarPartida();
     });
+
     analytics()
-        
 });
 
 
@@ -62,12 +66,14 @@ function verificarVitoria(){
         console.log('XWON')
         fim_partida=true;
         fadeIt(tab[1],tab[2],tab[3]);
+        xwon ++;
         break;
     case 2:
         $('#resultado').html('0 ganhou');
         console.log('OWON')
         fim_partida=true;
         fadeIt(tab[1],tab[2],tab[3]);
+        owon ++;
         break;
     case 0:
         $('#resultado').html('Nunhum ganhador');
