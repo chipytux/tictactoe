@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
 <html lang="en-us">
 
 <head>
@@ -7,9 +6,9 @@
 <title>Tic Tac Toe</title>
 <style>
   #VITORIAS{
-    border: ridge 3px black;
     height: 40px;
     width: 120px;
+    border: ridge 3px black;
     border-radius:10px;
   }
   span{
@@ -20,6 +19,11 @@
 </head>
     <body>
       <div id='TABULEIRO' class='center-block'>
+        <div id='VITORIAS'> 
+          <img src="img/x.png" height="30" width="30"></img> <span id='XWON'></span>
+          <img src="img/o.png" height="30" width="30"></img> <span id='OWON'></span>
+        </div>
+
         <div id='L1' class='LINHA'>
           <div id='A1' class='CELULA'></div>
           <div id='A2' class="CELULA"></div>
@@ -35,11 +39,9 @@
           <div id='C2' class="CELULA"></div>
           <div id='C3' class="CELULA"></div>
         </div>
+
         <button id='LIMPAR'>START GAME</button>
-    </div>
-    <div id='VITORIAS'> 
-      <img src="img/x.png" height="30" width="30"></img> <span id='XWON'></span>
-      <img src="img/o.png" height="30" width="30"></img> <span id='OWON'></span>
+
     </div>
     
     <!--EXTERNO-->
