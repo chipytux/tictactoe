@@ -29,7 +29,7 @@ $(document).ready(function(){
     });
     
     $("#LIMPAR").click(function(){      //TRATA CLIQUE DO BOTÃO START GAME
-        $.fx.off = false;   //DESABILITA AS ANIMACOES
+        $.fx.off = true;   //DESABILITA AS ANIMACOES
         iniciarPartida();   //RECONFIGURA O TABULEIRO
     });
 
