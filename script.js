@@ -4,8 +4,10 @@ var fim_partida=false;
 var vez = 0;
 var xwon = 0;
 var owon = 0;
+var fadeout = false;
 
 function iniciarPartida(){
+    fadeout = false;
     $("#XWON").html(xwon);
     $("#OWON").html(owon);
     $(".CELULA").attr('valor',0);
@@ -136,7 +138,8 @@ function verificarVitoria(){
     }
 //-------------------------------------------------------------
     function fadeIt(v1,v2,v3){
-        for(var i=0;i<8;i++){
+        fadeout = true;
+        while(fadeout){
             v1.fadeOut('fast');
             v2.fadeOut('fast');
             v3.fadeOut('fast');
