@@ -4,20 +4,8 @@ var fim_partida=false;
 var vez = 0;
 var xwon = 0;
 var owon = 0;
-var cell_fade = [$('#A1'),$('#A2'),$('#A3')];
 
-function iniciarPartida(){
-    unFadeIt()
-    $("#XWON").html(xwon);
-    $("#OWON").html(owon);
-    $(".CELULA").attr('valor',0);
-    $(".CELULA").removeClass('X');
-    $(".CELULA").removeClass('O');
-    vez = 0;
-    fim_partida = false;
-}
-
-
+//--------------------------TRATAMENTO DE EVENTOS-----------------------------------   
 
 
 $(document).ready(function(){
@@ -47,17 +35,20 @@ $(document).ready(function(){
     analytics()
 });
 
+//--------------------------CONFIGURA O TABULEIRO PARA O INICIO DA PARTIDA-----------------------------------   
 
-function analytics(){
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-86842053-1', 'auto');
-  ga('send', 'pageview');
+function iniciarPartida(){
+    $.fx.off = true;
+    $("#XWON").html(xwon);
+    $("#OWON").html(owon);
+    $(".CELULA").attr('valor',0);
+    $(".CELULA").removeClass('X');
+    $(".CELULA").removeClass('O');
+    vez = 0;
+    fim_partida = false;
 }
-//-------------------------------------------------------------   
+
+//-------------------------VERIFICA SE ALGUM JOGADOR VENCEU------------------------------------   
 
 
 function verificarVitoria(){
@@ -86,7 +77,7 @@ function verificarVitoria(){
     }
 }
 
-//-------------------------------------------------------------
+//----------------------CALCULA VALORES DAS LINHAS COLUNAS E DIAGONAIS---------------------------------------
 
     function calculoTabuleiro(){
         var array = [[$('#A1'),$('#A2'),$('#A3')],[$('#B1'),$('#B2'),$('#B3')],[$('#C1'),$('#C2'),$('#C3')]];
@@ -150,12 +141,18 @@ function verificarVitoria(){
         }
     }
 
-    function unFadeIt(){
-        for (cell in cell_fade){
-            cell.stop();
-        }
-    }
-
 //-------------------------------------------------------------
-//-------------------------------------------------------------
+//--------------------GOOGLE ANALYTICS-----------------------------------------
 
+
+function analytics(){
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86842053-1', 'auto');
+  ga('send', 'pageview');
+}
+
+//-------------------------------------------------------------   
