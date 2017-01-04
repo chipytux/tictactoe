@@ -11,10 +11,10 @@ var owon = 0;
 $(document).ready(function(){
     iniciarPartida();
 
-    $(".CELULA").click(function(){
-        if($(this).hasClass('O')||$(this).hasClass('X')||fim_partida){return 0;}
+    $(".CELULA").click(function(){          //TRATA CLIQUES NO TABULEIRO
+        if($(this).hasClass('O')||$(this).hasClass('X')||fim_partida){return 0;}    //VERIFICA SE CELULA JÁ FOI JOGADA
         else{
-            if(vez%2===0){
+            if(vez%2===0){      //VERIFICA SE VEZ DE X OU DE O
                 $(this).addClass('X');
                 $(this).attr('valor',1);
                 vez++;
@@ -25,27 +25,28 @@ $(document).ready(function(){
                 vez++;
             }
         }
-        verificarVitoria();
+        verificarVitoria();     //VERIFICA SE HOUVE VENCEDOR APÓS CADA JOGADA
     });
     
-    $("#LIMPAR").click(function(){
-        iniciarPartida();
+    $("#LIMPAR").click(function(){      //TRATA CLIQUE DO BOTÃO START GAME
+        $.fx.off = false;   //DESABILITA AS ANIMACOES
+        iniciarPartida();   //RECONFIGURA O TABULEIRO
     });
 
-    analytics()
+    analytics();            //GOOGLE ANALYTICS
 });
 
 //--------------------------CONFIGURA O TABULEIRO PARA O INICIO DA PARTIDA-----------------------------------   
 
 function iniciarPartida(){
-    $.fx.off = true;
-    $("#XWON").html(xwon);
+    $.fx.off = false;           //HABILITA ANIMACOES
+    $("#XWON").html(xwon);      //ATUALIZA PLACAR
     $("#OWON").html(owon);
-    $(".CELULA").attr('valor',0);
-    $(".CELULA").removeClass('X');
-    $(".CELULA").removeClass('O');
-    vez = 0;
-    fim_partida = false;
+    $(".CELULA").attr('valor',0);   //ZERA VALOR DE TODAS AS CELULAS
+    $(".CELULA").removeClass('X');  //REMOVE CLASSE CSS X DE TODAS AS CELULAS
+    $(".CELULA").removeClass('O');  //REMOVE CLASSE CSS 0 DE TODAS AS CELULAS
+    vez = 0;                        
+    fim_partida = false;            
 }
 
 //-------------------------VERIFICA SE ALGUM JOGADOR VENCEU------------------------------------   
