@@ -67,6 +67,7 @@ function verificarVitoria(){
         fim_partida=true;
         fadeIt(tab[1],tab[2],tab[3]);
         xwon ++;
+        $("#XWON").html(xwon);
         break;
     case 2:
         $('#resultado').html('0 ganhou');
@@ -74,6 +75,7 @@ function verificarVitoria(){
         fim_partida=true;
         fadeIt(tab[1],tab[2],tab[3]);
         owon ++;
+        $("#OWON").html(owon);
         break;
     case 0:
         $('#resultado').html('Nunhum ganhador');
