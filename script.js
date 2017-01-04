@@ -29,7 +29,6 @@ $(document).ready(function(){
     });
     
     $("#LIMPAR").click(function(){      //TRATA CLIQUE DO BOTÃO START GAME
-        $.fx.off = true;   //DESABILITA AS ANIMACOES
         iniciarPartida();   //RECONFIGURA O TABULEIRO
     });
 
@@ -39,7 +38,7 @@ $(document).ready(function(){
 //--------------------------CONFIGURA O TABULEIRO PARA O INICIO DA PARTIDA-----------------------------------   
 
 function iniciarPartida(){
-    $.fx.off = false;           //HABILITA ANIMACOES
+    $.fx.off = true;            //DESABILITA ANIMACOES
     $("#XWON").html(xwon);      //ATUALIZA PLACAR
     $("#OWON").html(owon);
     $(".CELULA").attr('valor',0);   //ZERA VALOR DE TODAS AS CELULAS
@@ -131,7 +130,7 @@ function verificarVitoria(){
     }
 //-------------------------------------------------------------
     function fadeIt(v1,v2,v3){
-        cell_fade = [v1,v2,v3];
+        $.fx.off = false;   //HABILITA AS ANIMACOES
         for(var i=0;i<8;i++){
             v1.fadeOut('fast');
             v2.fadeOut('fast');
