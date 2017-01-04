@@ -4,10 +4,10 @@ var fim_partida=false;
 var vez = 0;
 var xwon = 0;
 var owon = 0;
-var fadeout = false;
+var cell_fade = [$('#A1'),$('#A2'),$('#A3')];
 
 function iniciarPartida(){
-    fadeout = false;
+    unFadeIt()
     $("#XWON").html(xwon);
     $("#OWON").html(owon);
     $(".CELULA").attr('valor',0);
@@ -57,7 +57,8 @@ function analytics(){
   ga('create', 'UA-86842053-1', 'auto');
   ga('send', 'pageview');
 }
-//-------------------------------------------------------------
+//-------------------------------------------------------------   
+
 
 function verificarVitoria(){
     var tab = calculoTabuleiro();
@@ -138,15 +139,20 @@ function verificarVitoria(){
     }
 //-------------------------------------------------------------
     function fadeIt(v1,v2,v3){
-        fadeout = true;
+        cell_fade = [v1,v2,v3];
         for(var i=0;i<8;i++){
-            if(!fadeout) break;
             v1.fadeOut('fast');
             v2.fadeOut('fast');
             v3.fadeOut('fast');
             v1.fadeIn('fast');
             v2.fadeIn('fast');
             v3.fadeIn('fast');
+        }
+    }
+
+    function unFadeIt(){
+        for (cell in cell_fade){
+            cell.stop();
         }
     }
 
