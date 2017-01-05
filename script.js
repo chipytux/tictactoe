@@ -1,4 +1,5 @@
 /* global $ */
+/* global ga */
 
 var fim_partida=false;
 var vez = 0;
@@ -14,16 +15,16 @@ $(document).ready(function(){
     $(".CELULA").click(function(){          //TRATA CLIQUES NO TABULEIRO
         if($(this).hasClass('O')||$(this).hasClass('X')||fim_partida){return 0;}    //VERIFICA SE CELULA JÁ FOI JOGADA
         else{
-            if(vez%2===0){      //VERIFICA SE VEZ DE X OU DE O
-                $(this).addClass('X');
-                $(this).attr('valor',1);
-                vez++;
-            }
-            else{
-                $(this).addClass('O');
-                $(this).attr('valor',2);
-                vez++;
-            }
+            if(vez%2===0){                              //
+                $(this).addClass('X');                  //
+                $(this).attr('valor',1);                //
+                vez++;                                  //
+            }                                           //
+            else{                                       // VERIFICA SE VEZ DE X OU 0
+                $(this).addClass('O');                  //
+                $(this).attr('valor',2);                //
+                vez++;                                  //
+            }                                           //
         }
         verificarVitoria();     //VERIFICA SE HOUVE VENCEDOR APÓS CADA JOGADA
     });
@@ -39,10 +40,10 @@ $(document).ready(function(){
 
 function iniciarPartida(){
     $("#XWON").html(xwon);      //ATUALIZA PLACAR
-    $("#OWON").html(owon);
+    $("#OWON").html(owon);      //
+    $(".CELULA").stop(true,true).fadeIn(0);   //PARA TODAS ANIMAÇÕES
+    $(".CELULA").removeClass('X').removeClass('O');  //REMOVE CLASSE CSS X DE TODAS AS CELULAS
     $(".CELULA").attr('valor',0);   //ZERA VALOR DE TODAS AS CELULAS
-    $(".CELULA").removeClass('X');  //REMOVE CLASSE CSS X DE TODAS AS CELULAS
-    $(".CELULA").removeClass('O');  //REMOVE CLASSE CSS 0 DE TODAS AS CELULAS
     vez = 0;                        
     fim_partida = false;            
 }
@@ -129,14 +130,10 @@ function verificarVitoria(){
     }
 //-------------------------------------------------------------
     function fadeIt(v1,v2,v3){
-        for(var i=0;i<8;i++){
-            v1.fadeOut('fast').delay(100).fadeIn('fast');
-            v2.fadeOut('fast').delay(100).fadeIn('fast');
-            v3.fadeOut('fast').delay(100).fadeIn('fast');
-//            v1.fadeIn('fast');
-  //          v2.fadeIn('fast');
-    //        v3.fadeIn('fast');
-            jQuery.fx.off = false;
+        for(var i=0;i<20;i++){
+            v1.fadeOut('fast').fadeIn('fast');
+            v2.fadeOut('fast').fadeIn('fast');
+            v3.fadeOut('fast').fadeIn('fast');
         }
     }
 
