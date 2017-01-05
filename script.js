@@ -129,13 +129,14 @@ function verificarVitoria(){
     }
 //-------------------------------------------------------------
     function fadeIt(v1,v2,v3){
-        for(var i=0;i<3;i++){
+        for(var i=0;i<8;i++){
             v1.fadeOut('fast');
             v2.fadeOut('fast');
             v3.fadeOut('fast');
             v1.fadeIn('fast');
             v2.fadeIn('fast');
             v3.fadeIn('fast');
+            jQuery.fx.off = true;
         }
     }
 
