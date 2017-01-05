@@ -129,7 +129,7 @@ function verificarVitoria(){
     }
 //-------------------------------------------------------------
     function fadeIt(v1,v2,v3){
-        for(var i=0;i<8;i++){
+        for(var i=0;i<3;i++){
             v1.fadeOut('fast');
             v2.fadeOut('fast');
             v3.fadeOut('fast');
